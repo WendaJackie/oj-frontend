@@ -34,8 +34,8 @@ import { routes } from "../router/routes";
 import { useRoute, useRouter } from "vue-router";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
-import checkAccess from "@/assets/checkAccess";
-import ACCESS_Enum from "@/access/accessEnum";
+import checkAccess from "@/access/checkAccess";
+import ACCESS_ENUM from "@/access/accessEnum";
 
 const router = useRouter();
 const store = useStore();
@@ -70,7 +70,7 @@ console.log();
 setTimeout(() => {
   store.dispatch("user/getLoginUser", {
     userName: "管理员",
-    userRole: ACCESS_Enum.ADMIN,
+    userRole: ACCESS_ENUM.ADMIN,
   });
 }, 3000);
 
