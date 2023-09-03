@@ -8,7 +8,7 @@ router.beforeEach(async (to, from, next) => {
   const loginUser = store.state.user.loginUser;
   // 如果之前没登陆过，自动登陆
   if (!loginUser || !loginUser.userRole) {
-    // 加await 是为了等用户登陆成功之后，再执行后续的代码
+    // 加 await 是为了等用户登陆成功之后，再执行后续的代码
     await store.dispatch("user/getLoginUser");
   }
   const needAccess = (to.meta?.access as string) ?? ACCESS_ENUM.NOT_LOGIN;
