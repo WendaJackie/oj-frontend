@@ -10,6 +10,7 @@ router.beforeEach(async (to, from, next) => {
   if (!loginUser || !loginUser.userRole) {
     // 加 await 是为了等用户登陆成功之后，再执行后续的代码
     await store.dispatch("user/getLoginUser");
+    // loginUser = store.state.user.loginUser;
   }
   const needAccess = (to.meta?.access as string) ?? ACCESS_ENUM.NOT_LOGIN;
   // 要跳转的页面必须要登陆
